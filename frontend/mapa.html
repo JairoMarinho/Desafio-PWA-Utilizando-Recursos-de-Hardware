@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Plantações</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="menu">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <h1>Mapa de Plantações</h1>
+        </div>
+        <div class="links" id="menuLinks">
+            <a href="index.html">Home</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="mapa.html">Mapa</a>
+            <a href="contato.html">Contato</a>
+        </div>
+    </nav>
+
+    <div id="map" style="height: 700px; margin-top: 60px;"></div>
+
+    <script>
+        function toggleMenu() {
+            const links = document.getElementById('menuLinks');
+            links.classList.toggle('show');
+        }
+
+        // Definindo as coordenadas de Recife e o nível de zoom
+        const map = L.map('map').setView([-8.0476, -34.8770], 13);  // Coordenadas de Recife, Brasil, com zoom de 13
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18
+        }).addTo(map);
+
+        async function fetchPlantations() {
+            const response = await fetch('http://127.0.0.1:3000/api/plantations');
+            const plantations = await response.json();
+            plantations.forEach(p => {
+                L.marker([p.location.latitude, p.location.longitude])
+                  .addTo(map)
+                  .bindPopup(`<h3>${p.name}</h3><p>${p.description}</p>`);
+            });
+        }
+
+        fetchPlantations();
+    </script>
+</body>
+</html>

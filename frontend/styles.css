@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 239);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100000000;
+}
+
+nav .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav .hamburger {
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+}
+
+nav h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+nav .links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color:  rgb(0, 0, 239);
+}
+
+nav .links a {
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid  rgb(0, 0, 239);
+}
+
+nav .links.show {
+    display: flex;
+}
+
+form {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"],
+form input[type="file"],
+form button {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color:  rgb(0, 0, 239);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#plantations-list {
+    margin: 20px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    form input[type="text"],
+    form input[type="file"],
+    form button {
+        font-size: 14px;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px; /* Espaço após o menu */
+    padding: 20px;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+}

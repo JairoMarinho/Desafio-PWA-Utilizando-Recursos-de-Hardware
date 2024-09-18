@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="menu">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <h1>Contato</h1>
+        </div>
+        <div class="links" id="menuLinks">
+            <a href="index.html">Home</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="mapa.html">Mapa</a>
+            <a href="contato.html">Contato</a>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 60px;">
+        <h1>Contato</h1>
+        <p><a href="geo:37.786971,-122.399677;u=35">Abrir no Mapa</a></p>
+        <p><a href="tel:+49.157.0156">Ligar para +49 157 0156</a></p>
+        <p><a href="mailto:nowhere@mozilla.org">Enviar email</a></p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const links = document.getElementById('menuLinks');
+            links.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

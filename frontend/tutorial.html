@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="menu">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <h1>Tutorial</h1>
+        </div>
+        <div class="links" id="menuLinks">
+            <a href="index.html">Home</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="mapa.html">Mapa</a>
+            <a href="contato.html">Contato</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Como Plantar Tomate</h2>
+        <iframe width="360" height="315" src="https://www.youtube.com/embed/SPbbPk3GhlQ?si=8p859v1HqG73yIdO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h2>Como Plantar Uva</h2>
+        <iframe width="360" height="315" src="https://www.youtube.com/embed/vEMQK2h1728?si=FA92Ft8jAZK-zOdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+   
+   <script>
+        function toggleMenu() {
+            const links = document.getElementById('menuLinks');
+            links.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
